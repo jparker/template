@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <title>APPLICATION_NAME</title>
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.3.1/build/reset-fonts-grids/reset-fonts-grids.css" />
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.3.1/build/base/base-min.css" />
+  <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag :defaults %>
+</head>
+<body>
+  <div id="doc3" class="yui-t1">
+    <div id="hd">
+      <!-- header -->
+    </div>
+    <div id="bd">
+      <div id="yui-main">
+        <div class="yui-b">
+          <div class="yui-g">
+            <!-- main body -->
+            <div id="flash">
+              <% for level in [:notice, :warning, :error].reject { |x| flash[x].blank? } -%>
+                <p class="<%= level %>"><%= h flash[level] %></p>
+              <% end -%>
+            </div>
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+      <div class="yui-b">
+        <!-- sidebar -->
+      </div>
+    </div>
+    <div id="ft">
+      <!-- footer -->
+    </div>
+  </div>
+</body>
+</html>
