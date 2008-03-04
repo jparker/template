@@ -1,4 +1,4 @@
-module UrgeToPunt::ActiveSupport::CoreExtensions::Date::Calculations
+class Date
   def weeks_ago(weeks)
     advance(:weeks => -weeks)
   end
