@@ -6,14 +6,14 @@ namespace :db do
     
     case config['adapter']
     when 'mysql'
-      command << 'mysql '
+      command << 'mysql5 '
       command << "--host=#{config['host'] || 'localhost'} "
       command << "--port=#{config['port'] || 3306} "
       command << "--user=#{config['username'] || 'root'} "
       command << "--password=#{config['password'] || ''} "
       command << config['database']
     when 'postgresql'
-      command << 'psql '
+      command << 'psql82 '
       command << "-h #{config['host'] || 'localhost'} "
       command << "-p #{config['port'] || 5432} "
       command << "-U #{config['username'] || 'postgres'} "
