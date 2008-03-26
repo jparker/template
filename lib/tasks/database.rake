@@ -18,6 +18,8 @@ namespace :db do
       command << "-p #{config['port'] || 5432} "
       command << "-U #{config['username'] || 'postgres'} "
       command << config['database']
+    when 'sqlite3'
+      command << "sqlite3 #{config['database']}"
     else
       command << "echo Unsupported databse adapter: #{config['adapter']}"
     end
