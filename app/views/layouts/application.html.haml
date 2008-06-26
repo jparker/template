@@ -1,0 +1,30 @@
+!!! XML
+!!!
+%html
+  %head
+    %meta{ :'http-equiv' => 'Content-Type', :content => 'text/html;charset=UTF-8' }
+    %title= "APP_NAME | #{(yield(:title) || 'app tag line').downcase}"
+    = stylesheet_link_tag 'reset-fonts-grids', 'base-min'
+    / Load YUI CSS from Yahoo! in production
+    /
+      = stylesheet_link_tag 'http://yui.yahooapis.com/2.5.2/build/reset-fonts-grids/reset-fonts-grids.css'
+    = stylesheet_link_tag 'application'
+  %body{ :class => controller.controller_name }
+    #doc3.yui-t1
+      #hd
+      #bd
+        .yui-b
+          #sd
+            / sidebar
+        #yui-main
+          .yui-b
+            .yui-g
+              #flash
+                - unless flash[:notice].blank?
+                  %p.notice= h flash[:notice]
+                - unless flash[:error].blank?
+                  %p.error= h flash[:error]
+              / main body
+              = yield
+      #ft
+        %p An urge.to.punt technology.
