@@ -1,7 +1,7 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   def title(text)
-    content_tag(:h1, content_for(:title) { h text })
+    content_for(:title) { h text }
   end
   
   def link_to_show(url, options = {})
