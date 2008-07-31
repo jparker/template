@@ -51,6 +51,7 @@ Rails::Initializer.run do |config|
   # no regular words or you'll be exposed to dictionary attacks.
   config.action_controller.session = {
     :session_key => '_template_session',
+    # When cloning a new project, generate a new secret by running "rake secret"
     :secret      => 'e6ad2f59fd8cd68791bc6ec44f2f723dea18f37d968db48f25752dc610413d498d4c6358e155caa5ecc16e79a85a4698a845b7f0cfe40ec24b38cd14aa313ddf'
   }
 
